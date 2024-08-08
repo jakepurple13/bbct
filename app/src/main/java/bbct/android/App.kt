@@ -19,8 +19,14 @@ import bbct.android.ui.theme.BbctTheme
 
 @Composable
 fun App() {
-    BbctTheme {
-        Scaffold(topBar = { TopBar() }, floatingActionButton = { AddCardButton() }, modifier = Modifier.fillMaxSize()) { innerPadding ->
+    BbctTheme(
+        dynamicColor = false
+    ) {
+        Scaffold(
+            topBar = { TopBar() },
+            floatingActionButton = { AddCardButton() },
+            modifier = Modifier.fillMaxSize()
+        ) { innerPadding ->
             BaseballCardList(modifier = Modifier.padding(innerPadding))
         }
     }
